@@ -1,0 +1,9 @@
+# Ignore everything
+node_modules/*
+.history/*
+dist/*
+Thumbs.db
+
+# But not these files...
+!.gitignore
+

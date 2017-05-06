@@ -1,0 +1,97 @@
+https://mozilla.github.io/nunjucks/templating.html
+
+{% extends "layout.html" %} 
+{% set menuActive = {albums_4: 'current-menu-item current_page_item'} %} 
+{% set page = { title: 'Album Style Four' } %} 
+{% block content %}
+
+{% endblock %}
+
+{% set activeClass = "blog" %}
+{% include "bakery-header.html" %}
+{% set src = "img/" %}
+{%if activeJs == 'parallax' %} <script src="js/jquery.scrolling-parallax.js"></script>{% endif %}
+
+{% set transparentMenu = {class: 'header_trans-fixed header_top_bg' } %} 
+{{transparentMenu.class}}
+
+
+{% if top_header %}top-menu{% else %}right-menu{% endif %}
+
+
+{% set top_header = true %}
+
+
+<% for item in items %>
+  <li><$ item $></li>
+<% endfor %>
+
+
+{% if hungry %}  I am hungry{% elif tired %}  I am tired{% else %}  I am good!{% endif %}
+
+.global-container {
+    margin-top: 60px;
+    background-image: $image-bg;
+    @media (max-width: 767px) {
+        /* Your mobile styles here */
+    }
+    @media (min-width:1025px) {
+        /* Your desktop styles here */
+    } 
+}
+
+
+
+
+$('.menu-item:not(.menu-item-has-children) > a').each(function() {
+
+	$(this).on('click touch touchend', function(e) {
+		var el = $(this);
+		var link = el.attr('href');
+
+		function tolocation() {
+			window.location = link;
+		}
+		setTimeout(tolocation, 600);
+	});
+
+});
+
+
+count
+
+<span class="timer" data-from="0" data-to="100"
+      data-speed="5000" data-refresh-interval="50"></span>
+
+<script type="text/javascript">
+  $('.timer').countTo();
+</script>
+
+
+
+
+
+<div data-number="3"></div>
+
+    $('.vcex-star').raty({
+ number: function() {
+    return $(this).attr('data-number');
+  }
+        half: false,
+        starOff: 'fa fa-star rated vcex-col-2',
+        starOn: 'fa fa-star rated vcex-col-1'
+
+    })
+
+
+
+
+
+col-lg-offset-1
+
+jade 
+
+
+include script.js
+include style.css
+include:markdown article.md

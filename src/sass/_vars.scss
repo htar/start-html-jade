@@ -1,0 +1,71 @@
+/*colors*/
+
+$white: #fff;
+$black: #262626;
+$gray: rgba(38, 38, 38, .4);
+$green: #68c52a;
+
+/*fonts*/
+
+$openSans: 'Open Sans',
+sans-serif;
+$pantonBlack: 'PantonBlack',
+sans-serif;
+
+/*overlay*/
+
+@mixin overlay {
+    position: relative;
+    &:before {
+        content: '';
+        background-color: rgba(0, 0, 0, .7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        opacity: 1;
+    }
+    >* {
+        z-index: 1;
+        position: relative;
+    }
+}
+
+
+/* Media Query Breakpoints*/
+
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 767px;
+@mixin media-lg {
+    @media screen and (max-width: #{$lg}) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media screen and (max-width: #{$md}) {
+        @content;
+    }
+}
+
+@mixin media-sm {
+    @media screen and (max-width: #{$sm}) {
+        @content;
+    }
+}
+
+@mixin media-xs {
+    @media screen and (max-width: #{$xs}) {
+        @content;
+    }
+}
+
+// @include media-sm {
+//     text-align: justify;
+//     margin-top: 100px;
+//     font-size: 24px;
+// }
